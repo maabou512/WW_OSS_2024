@@ -38,22 +38,31 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
 * run_pipeline.py : Main and run following scripts and shell commands.(bash)  
 
 * step1.py: modified csv file extracted from original excel.
+<pre>
   *In: input_files/input.csv
   *Out: output_files/output_step1.csv
+</pre>
 * step2.py: change timestamp into ISO formats (from 'yyyy-MM-dd HH:mm:ss' to 'yyyy-MM-ddT HH:mm:ss'
+<pre>
   *In: output_files/output_step1.csv
   *Out: output_files/output_step2.csv
+</pre>
 * step3.py: convert csv into json
   *In: output_files/output_step2.csv
   *Out: output_files/output_step3.json
+<pre>
 * cmd1: extract each data object  from array []
+<pre>
   *In: output_files/output_step3.json
   *Out: output_files/output_per_line.json
-  *コマンドの内容：`cat *inputfile* |jq -c .[] >  *outputfile*
+  *command: `cat *inputfile* |jq -c .[] >  *outputfile*
+</pre>
 * cmd2: Change json to register Opensearch/Elasticsearch and use Bulk API
+<pre>
   *In: output_files/output_per_line.json
   *Out: output_files/output_bulk.json
-  *コマンドの内容： `sed 'i\{ "index" : {} \}  *inputfile*' > *outputfile*　 
+  *command: `sed 'i\{ "index" : {} \}  *inputfile*' > *outputfile*　
+</pre>
 
 ### Directories
 <pre>
