@@ -1,4 +1,4 @@
-# Convert XLSX Suvey Dataset into JSON (2024 World of Open Source: Global Spotlight )
+# Convert XLSX dataset into JSON (2024 World of Open Source: Global Spotlight)
 
 ## Motivation
 * Want to analyze open source dynamism in more sophisticated way than Excel
