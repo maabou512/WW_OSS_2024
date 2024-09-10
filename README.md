@@ -11,15 +11,15 @@
 
 ## Procedure as a whole
 ### 1. Manual modification
-Too sad, some "hand work" is necessary because question's header(line 1-3 of xlsx file) are different about depth/layers. So you need modify header line 2 with line 3 info for Q30,31,32,38,42,43 such as (in Q30 case);
+Too sad, some "hand work" is necessary because question's header(line 1-3 of xlsx file) are different about depth/layers. So you need modify header line 2 with line 3 info for Q30,31,32,38,42,43,47.
 
+Example: (in Q30 case);
 The line 2 item 
-
-"How often does using OSS deliver the following benefits in your organization? (select one response per row)" 
+> "How often does using OSS deliver the following benefits in your organization? (select one response per row)" 
 
 is modified with the line 3 item to; 
 
-"How often does using OSS deliver the following benefits in your organization? (select one response per row):Improved software quality" 
+> "How often does using OSS deliver the following benefits in your organization? (select one response per row):*Improved software quality*" 
 
 then you save the file as "input_files/input_step1.csv"
 
@@ -49,13 +49,14 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
 * cmd1: extract each data object  from array []
   *In: output_files/output_step3.json
   *Out: output_files/output_per_line.json
-  *コマンドの内容：`cat **inputfile** |jq -c .[] >  **outputfile**
+  *コマンドの内容：`cat *inputfile* |jq -c .[] >  *outputfile*
 * cmd2: Change json to register Opensearch/Elasticsearch and use Bulk API
   *In: output_files/output_per_line.json
   *Out: output_files/output_bulk.json
-  *コマンドの内容： `sed 'i\{ "index" : {} \}  **inputfile**' > **outputfile**　 
+  *コマンドの内容： `sed 'i\{ "index" : {} \}  *inputfile*' > *outputfile*　 
 
 ### Directories
+<pre>
 /
 │
 ├── scripts/
@@ -70,7 +71,8 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
 ├── output_files/
 │   └── output*.*
 │
-└── README.md 
+└── README.md
+</pre>
 
 ### My environments
 * Ubuntu 22.04LTS
@@ -78,4 +80,4 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
 * bash : 5.1.16
 
 ### Others
-* No License
+* Unlicense 
