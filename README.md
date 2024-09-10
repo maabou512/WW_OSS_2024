@@ -50,7 +50,7 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
 * step3.py: convert csv into json
   *In: output_files/output_step2.csv
   *Out: output_files/output_step3.json
-<pre>
+</pre>
 * cmd1: extract each data object  from array []
 <pre>
   *In: output_files/output_step3.json
