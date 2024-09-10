@@ -48,6 +48,7 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
   *Out: output_files/output_step2.csv
 </pre>
 * step3.py: convert csv into json
+<pre>
   *In: output_files/output_step2.csv
   *Out: output_files/output_step3.json
 </pre>
