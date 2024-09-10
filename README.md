@@ -21,7 +21,7 @@ is modified with the line 3 item to;
 
 > "How often does using OSS deliver the following benefits in your organization? (select one response per row):*Improved software quality*" 
 
-then you save the file as "input_files/input_step1.csv"
+then you save the file as "input_files/input.csv"
 
 ### 2. Run script "run_pipeline.py"
 Just run it. 
