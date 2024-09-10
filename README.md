@@ -2,7 +2,7 @@
 
 ## Motivation
 * Want to analyze open source dynamism in more sophisticated way than Excel
-* Want to analyze forcusing on Japan 
+* Want to analyze focusing on Japan 
 
 ## About dataset
 * Convert survey rawdata(xlsx) into json data objects. 
