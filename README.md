@@ -51,17 +51,16 @@ Configure settings and do analyze on Opensearch Dashboard/Kibana
   *In: output_files/output_step2.csv
   *Out: output_files/output_step3.json
 </pre>
-* cmd1: extract each data object  from array []
+
+* cmd1: extract each data object  from array (`cat *In* |jq -c .[] >  *Out*`)
 <pre>
   *In: output_files/output_step3.json
   *Out: output_files/output_per_line.json
-  *command: `cat *inputfile* |jq -c .[] >  *outputfile*
 </pre>
-* cmd2: Change json to register Opensearch/Elasticsearch and use Bulk API
+* cmd2: Change json to register Opensearch/Elasticsearch and use Bulk API(`sed 'i\{ "index" : {} \}  *In*' > *Out*`　)
 <pre>
   *In: output_files/output_per_line.json
   *Out: output_files/output_bulk.json
-  *command: `sed 'i\{ "index" : {} \}  *inputfile*' > *outputfile*　
 </pre>
 
 ### Directories
